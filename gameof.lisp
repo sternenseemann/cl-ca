@@ -1,4 +1,4 @@
-(load "cl-ca.lisp")
+(ql:quickload :cl-ca)
 
 (setf *random-state* (make-random-state t)) ; we want more random stuff /o/
 (defparameter *width* 80 "width of the simulation")
