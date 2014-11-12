@@ -80,3 +80,22 @@
 				 from (cdr from-pos)
 				 to   (cdr to-pos)
 				 do (set-automaton (cons x y) (funcall gen-state (cons x y)) fun))))
+
+(defun print-automata (from-pos to-pos conversion-fun)
+  "prints the automata between two positions. It uses a conversion
+   function to determine which char to use"
+  ; perform a shell clear (unix and sbcl/clisp only working)
+  #+clisp
+  (ext:shell "clear")
+  #+sbcl
+  (sb-ext:run-program "/bin/sh" (list "-c" "clear") :input nil :output *standard-output*)
+
+  (loop for y
+        from (cdr from-pos)
+        upto (cdr to-pos)
+        do (progn
+             (loop for x
+                   from (car from-pos)
+                   upto (car to-pos)
+                   do (format t "~a" (funcall conversion-fun (car (get-automaton (cons x y))))))
+             (format t "~%"))))

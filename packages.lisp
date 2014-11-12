@@ -6,5 +6,6 @@
 	#:get-automaton
 	#:run-step
 	#:create-automata
+    #:print-automata
 	#:von-neumann-neighbors
 	#:moore-neighbors))
