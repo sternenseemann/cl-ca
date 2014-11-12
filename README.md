@@ -3,7 +3,7 @@ cl-ca is a common lisp library for simply implementing programs using cellular
 automata (e. g. Conway's game of life).
 
 ## usage
-An example program can be found in form of the Game of Life implementation [gameof.lisp](./gameof.lisp).
+There some [example programs](./examples) to introduce you. Also it might help to read the actual source code (don't worry: It isn't too much) and the following chapter here.
 (more detailed documentation is about to come)
 
 ## architecture
