@@ -88,7 +88,7 @@
   #+clisp
   (ext:shell "clear")
   #+sbcl
-  (sb-ext:run-program "/bin/sh" (list "-c" "clear") :input nil :output *standard-output*)
+  (sb-ext:run-program "/usr/bin/clear" '() :input nil :output *standard-output*)
 
   (loop for y
         from (cdr from-pos)
