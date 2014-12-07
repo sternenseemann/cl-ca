@@ -29,5 +29,5 @@ It must return a list representing itself (this one then gets put in the hash-ta
 
 The functions `moore-neighbors` and `von-neumann-neighbors` implement neighborhood (See the corresponding Wikipedia articles: [Moore Neighborhood](https://en.wikipedia.org/wiki/Moore_neighborhood) and [Von Neumann Neighborhood](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood)). One of these functions (or another one doing something reasonable in this context) should be passed to `run-step` and is used to calculate neighborhood then.
 
-## can I (ql:quickload it?
-No, not yet. It has to be added into quicklisp first. For now, you can clone into a subfolder of `~/quicklisp/local-projects`.
+## can I ql:quickload it?
+[I think so](https://github.com/quicklisp/quicklisp-projects/tree/master/cl-ca)
