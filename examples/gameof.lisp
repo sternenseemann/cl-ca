@@ -41,12 +41,13 @@
     ((equal pos '(1 . 2)) 't)
     (t 'nil)))
 
-(cl-ca:create-automata *from* *to* #'init-random #'liferules)
+(cl-ca:set-dimensions (cons *from* *to*))
+(cl-ca:create-automata #'init-random #'liferules)
 
 (loop do (progn
-	   (cl-ca:print-automata *from* *to* (lambda (x)
-                                           (if x
-                                             #\#
-                                             #\space)))
-	   (sleep 1)
-	   (cl-ca:run-step *from* *to* #'cl-ca:moore-neighbors)))
+           (cl-ca:print-automata (lambda (x)
+                                               (if x
+                                                 #\#
+                                                 #\space)))
+           (sleep 1)
+           (cl-ca:run-step #'cl-ca:moore-neighbors)))

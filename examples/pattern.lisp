@@ -15,12 +15,13 @@
 (defun toggle (me neighbors)
   (list (not (car me)) (cadr me)))
 
-(cl-ca:create-automata *from* *to* #'pattern #'toggle)
+(cl-ca:set-dimensions (cons *from* *to*))
+(cl-ca:create-automata #'pattern #'toggle)
 
 (loop do (progn
-           (cl-ca:print-automata *from* *to* (lambda (x)
-                                               (if x
-                                                 #\#
-                                                 #\space)))
-           (cl-ca:run-step *from* *to* (lambda (pos) '()))
+           (cl-ca:print-automata (lambda (x)
+                                   (if x
+                                     #\#
+                                     #\space)))
+           (cl-ca:run-step (lambda (pos dim) '()))
            (sleep 0.5)))
